@@ -1,0 +1,25 @@
+{
+  "name": "@monorepo-ts-vue-nestjs/shared",
+  "private": true,
+  "version": "0.0.0",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "module": "dist_es/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist_es/index.js",
+      "require": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "lib:dev": "concurrently \"tsc --build tsconfig.json --watch\" \"tsc --build tsconfig.es.json --watch\" --kill-others",
+    "lib:build": "concurrently \"tsc --build tsconfig.json\" \"tsc --build tsconfig.es.json\" --kill-others",
+    "lib:clean": "rimraf ./dist ./dist_es",
+    "lib:lint": "eslint \"src/**/*.ts\" --fix"
+  },
+  "dependencies": {
+    "@monorepo-ts-vue-nestjs/utils": "0.0.0",
+    "yup": "^0.32.11"
+  }
+}

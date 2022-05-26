@@ -1,0 +1,50 @@
+{
+  "routes": {
+    "login": "Sign in",
+    "dashboard": "Dashboard"
+  },
+
+  "validation": {
+    "field_required": "This field is required",
+    "string_min": "This field must be at least {min} characters",
+    "string_max": "This field must have a maximum of {max} characters",
+    "string_email": "This is not a valid e-mail address"
+  },
+
+  "app": {
+    "connection_lost": "You have lost connection to the server. Connecting ..."
+  },
+
+  "account": {
+    "session_exp": "The session has expired!",
+    "logout_success": "You have been signed out successfully!",
+    "logout_failed": "A logout error has occurred!",
+    "logout_progress": "Signing out...",
+
+    "menu": {
+      "logout": "Sign out"
+    }
+  },
+
+  "login": {
+    "welcome": {
+      "title": "Welcome!",
+      "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate nobis velit unde iusto obcaecati rem in rerum! Quod iusto corrupti quidem distinctio laboriosam, harum earum mollitia deleniti excepturi voluptatum sapiente?"
+    },
+
+    "form": {
+      "email": "E-mail adress",
+      "password": "Password",
+      "remember": "Remember me",
+      "signin": "Sign In",
+
+      "errors": {
+        "no_authorization": "Wrong email or password!"
+      }
+    }
+  },
+
+  "dashboard": {
+    "welcome": "Welcome back, {name}!"
+  }
+}

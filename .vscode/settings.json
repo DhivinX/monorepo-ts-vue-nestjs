@@ -1,0 +1,12 @@
+{
+  "npm.exclude": [
+    "**/apps/**",
+    "**/libs/**",
+  ],
+
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "vue"
+  ]
+}

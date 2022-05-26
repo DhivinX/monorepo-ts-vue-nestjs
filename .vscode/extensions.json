@@ -1,0 +1,19 @@
+{
+  "recommendations": [
+    "vue.volar",
+    "dbaeumer.vscode-eslint",
+    "editorconfig.editorconfig",
+    "syler.sass-indented",
+
+    "eamodio.gitlens",
+    "aaron-bond.better-comments",
+    "visualstudioexptteam.vscodeintellicode",
+    "pkief.material-icon-theme",
+    "ecmel.vscode-html-css",
+    "donjayamanne.githistory",
+  ],
+
+  "unwantedRecommendations": [
+    "octref.vetur"
+  ]
+}

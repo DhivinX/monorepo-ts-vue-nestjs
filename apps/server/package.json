@@ -1,0 +1,50 @@
+{
+  "name": "@monorepo-ts-vue-nestjs/server",
+  "private": true,
+  "version": "0.0.0",
+  "license": "MIT",
+  "scripts": {
+    "serve": "nest start --watch",
+    "build": "nest build",
+    "cli": "node ../../_dist/server/cli.js",
+    "lint": "eslint \"src/**/*.ts\" --fix",
+    "start": "nest start",
+    "start:debug": "nest start --debug --watch"
+  },
+  "dependencies": {
+    "@monorepo-ts-vue-nestjs/shared": "0.0.0",
+    "@monorepo-ts-vue-nestjs/utils": "0.0.0",
+    "@nestjs/common": "^8.0.0",
+    "@nestjs/config": "^2.0.0",
+    "@nestjs/core": "^8.0.0",
+    "@nestjs/passport": "^8.2.1",
+    "@nestjs/platform-express": "^8.0.0",
+    "@nestjs/typeorm": "^8.0.3",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.13.2",
+    "cookie-parser": "^1.4.6",
+    "crypto": "^1.0.1",
+    "helmet": "^5.0.2",
+    "jsonwebtoken": "^8.5.1",
+    "morgan": "^1.10.0",
+    "nest-commander": "^2.5.0",
+    "nestjs-console": "^7.0.1",
+    "passport": "^0.5.2",
+    "passport-jwt": "^4.0.0",
+    "pg": "^8.7.3",
+    "reflect-metadata": "^0.1.13",
+    "rxjs": "^7.2.0",
+    "typeorm": "^0.2.34",
+    "uuid": "^8.3.2",
+    "yup": "^0.32.11"
+  },
+  "devDependencies": {
+    "@nestjs/cli": "^8.0.0",
+    "@nestjs/schematics": "^8.0.0",
+    "@nestjs/testing": "^8.0.0",
+    "@types/express": "^4.17.13",
+    "@types/supertest": "^2.0.11",
+    "source-map-support": "^0.5.20",
+    "supertest": "^6.1.3"
+  }
+}
