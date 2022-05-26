@@ -3,5 +3,6 @@ export interface AccountResponse {
     email: string;
     firstName: string;
     lastName: string;
+    avatar: string;
     createdAt: Date;
 }
