@@ -20,7 +20,6 @@
                             :label="$t('login.form.email')"
                             outlined
                             :disabled="true"
-                            hide-bottom-space
                         />
 
                         <VInput

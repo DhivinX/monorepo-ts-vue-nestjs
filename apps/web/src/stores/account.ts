@@ -28,7 +28,7 @@ export const useAccountStore = defineStore('account', () => {
     const initialState = {
         loaded: false,
         email: '',
-        avatar: 'https://pl.gravatar.com/userimage/29482352/289f3f6197c4a5e9e98f9df296df0c97.jpeg',
+        avatar: '',
         firstName: '',
         lastName: '',
         createdAt: null,
@@ -54,6 +54,7 @@ export const useAccountStore = defineStore('account', () => {
         state.email = data.email;
         state.firstName = data.firstName;
         state.lastName = data.lastName;
+        state.avatar = data.avatar;
         state.createdAt = new Date(data.createdAt);
     }
 
