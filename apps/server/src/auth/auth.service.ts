@@ -7,15 +7,12 @@ import { sign } from 'jsonwebtoken';
 import { JwtPayload } from './strategies/jwt.strategy';
 import { hashPassword } from './utils/hash-password';
 import { User } from '@/db/user.entity';
-import { AccountService } from '@/account/account.service';
 import { Session } from '@/db/session.entity';
+import { UsersService } from '@/users/users.service';
 
 @Injectable()
 export class AuthService {
-    constructor(
-        private readonly configService: ConfigService,
-        private readonly accountService: AccountService
-    ) {}
+    constructor(private readonly configService: ConfigService, private readonly usersService: UsersService) {}
 
     async login(
         oldSession: Session,
@@ -47,7 +44,7 @@ export class AuthService {
             maxAge,
         });
 
-        const account = await this.accountService.getAccount(session);
+        const account = await this.usersService.getProfile(session.user);
 
         return {
             expirationTime,

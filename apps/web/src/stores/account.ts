@@ -4,7 +4,7 @@ import { computed, reactive } from '@vue/reactivity';
 import { useRouter } from 'vue-router';
 import { useQuasar } from 'quasar';
 import { useI18n } from 'vue-i18n';
-import type { AccountResponse } from '@monorepo-ts-vue-nestjs/shared';
+import type { UserProfileResponse } from '@monorepo-ts-vue-nestjs/shared';
 
 interface State {
     authenticated: boolean;
@@ -49,7 +49,7 @@ export const useAccountStore = defineStore('account', () => {
         }
     }
 
-    function load(data: AccountResponse) {
+    function load(data: UserProfileResponse) {
         state.loaded = true;
         state.email = data.email;
         state.firstName = data.firstName;

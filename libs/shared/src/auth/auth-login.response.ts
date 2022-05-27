@@ -1,6 +1,6 @@
-import { AccountResponse } from '../account/account.response';
+import { UserProfileResponse } from '../users/user-profile.response';
 
 export interface AuthLoginResponse {
     expirationTime: number;
-    account: AccountResponse;
+    account: UserProfileResponse;
 }

@@ -1,6 +1,6 @@
-import type { AccountResponse } from '@monorepo-ts-vue-nestjs/shared';
+import type { UserProfileResponse } from '@monorepo-ts-vue-nestjs/shared';
 import { $axios } from '../client';
 
-export async function getAccount() {
-    return await $axios.get<AccountResponse>('/account');
+export async function getCurrent() {
+    return await $axios.get<UserProfileResponse>('/users/current');
 }

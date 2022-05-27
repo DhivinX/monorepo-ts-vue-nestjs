@@ -21,9 +21,9 @@ export class JwtStrategy extends PassportStrategy(Strategy, 'local') {
         });
     }
 
-    async validate(payload: JwtPayload, done: (error, userSession) => void) {
+    async validate(payload: JwtPayload) {
         if (!payload || !payload.id) {
-            return done(new UnauthorizedException(), false);
+            throw new UnauthorizedException();
         }
 
         const userSession = await Session.findOne({
@@ -35,12 +35,12 @@ export class JwtStrategy extends PassportStrategy(Strategy, 'local') {
         });
 
         if (!userSession) {
-            return done(new UnauthorizedException(), false);
+            throw new UnauthorizedException();
         }
 
         userSession.lastSeen = new Date();
         userSession.save();
 
-        done(null, userSession);
+        return { userSession };
     }
 }

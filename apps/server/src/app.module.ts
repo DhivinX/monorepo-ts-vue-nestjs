@@ -5,7 +5,6 @@ import { DatabaseModule } from './db/database.module';
 import { CliModule } from './cli/cli.module';
 import { UsersModule } from './users/users.module';
 import { AuthModule } from './auth/auth.module';
-import { AccountModule } from './account/account.module';
 
 @Module({
     imports: [
@@ -17,7 +16,6 @@ import { AccountModule } from './account/account.module';
         DatabaseModule,
         CliModule,
         AuthModule,
-        AccountModule,
         UsersModule,
     ],
 
