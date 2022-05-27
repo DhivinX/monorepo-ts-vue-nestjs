@@ -45,7 +45,7 @@ function toggleDrawer() {
 }
 
 const accountAction = usePromiseState(async () => {
-    const res = await api.account.getCurrent();
+    const res = await api.users.getCurrent();
     accountStore.load(res.data);
 });
 

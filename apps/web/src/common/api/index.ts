@@ -3,9 +3,9 @@ export * from './interceptors';
 export * from './response-error';
 
 import * as auth from './modules/auth';
-import * as account from './modules/account';
+import * as users from './modules/users';
 
 export const api = {
     auth,
-    account,
+    users,
 };
