@@ -1,7 +1,7 @@
 import { AccountResponse } from '@monorepo-ts-vue-nestjs/shared';
 import { Injectable } from '@nestjs/common';
 import { Session } from '@/db/session.entity';
-import * as crypto from 'crypto';
+import crypto from 'crypto';
 
 @Injectable()
 export class AccountService {
