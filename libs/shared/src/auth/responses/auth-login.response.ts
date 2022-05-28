@@ -1,4 +1,4 @@
-import { UserProfileResponse } from '../users/user-profile.response';
+import { UserProfileResponse } from '../../users/responses/user-profile.response';
 
 export interface AuthLoginResponse {
     expirationTime: number;

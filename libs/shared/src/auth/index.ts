@@ -1,2 +1,2 @@
-export * from './auth-login.input';
-export * from './auth-login.response';
+export * from './inputs/auth-login.input';
+export * from './responses/auth-login.response';

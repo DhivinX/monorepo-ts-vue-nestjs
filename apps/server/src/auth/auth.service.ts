@@ -4,6 +4,7 @@ import { Injectable, UnauthorizedException } from '@nestjs/common';
 import { Response } from 'express';
 import { v4 as uuid } from 'uuid';
 import { sign } from 'jsonwebtoken';
+import { LessThan } from 'typeorm';
 import { JwtPayload } from './strategies/jwt.strategy';
 import { hashPassword } from './utils/hash-password';
 import { User } from '@/db/user.entity';
@@ -37,9 +38,11 @@ export class AuthService {
         const session = await this.generateSession(oldSession, user, expirationTime);
         const signedToken = this.createToken(session.token);
 
+        const secure = this.configService.get<boolean>('http.secure');
+
         response.cookie('jwt', signedToken, {
-            secure: this.configService.get<boolean>('http.secure'),
-            sameSite: 'none',
+            secure: secure,
+            sameSite: secure ? 'none' : 'lax',
             //domain: this.configService.get<string>('http.domain'),
             httpOnly: true,
             maxAge,
@@ -56,9 +59,11 @@ export class AuthService {
     async logout(session: Session, response: Response): Promise<boolean> {
         await session.remove();
 
+        const secure = this.configService.get<boolean>('http.secure');
+
         response.clearCookie('jwt', {
-            secure: this.configService.get<boolean>('http.secure'),
-            sameSite: 'none',
+            secure: secure,
+            sameSite: secure ? 'none' : 'lax',
             //domain: this.configService.get<string>('http.domain'),
             httpOnly: true,
         });
@@ -102,5 +107,13 @@ export class AuthService {
         await session.save();
 
         return session;
+    }
+
+    async cleanExpiredSessions(): Promise<number> {
+        const { affected } = await Session.delete({
+            exp: LessThan(Date.now()),
+        });
+
+        return affected;
     }
 }

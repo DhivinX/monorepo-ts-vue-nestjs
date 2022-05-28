@@ -9,14 +9,14 @@ import helmet from 'helmet';
 import { AppModule } from './app.module';
 import { YupValidationPipe } from './common';
 import { ExpressAdapter } from '@nestjs/platform-express';
-import { ConsoleLogger } from '@nestjs/common';
+import { Logger } from '@nestjs/common';
 
 async function bootstrap() {
     const server = express();
     const app = await NestFactory.create(AppModule, new ExpressAdapter(server));
 
     const configService = app.get(ConfigService);
-    const logger = new ConsoleLogger('APP');
+    const logger = new Logger('APP');
 
     const port = configService.get<number>('http.port');
     const origins = configService.get<string[]>('http.cors');

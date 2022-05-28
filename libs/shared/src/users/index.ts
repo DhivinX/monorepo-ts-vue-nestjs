@@ -1,2 +1,2 @@
-export * from './user-create.input';
-export * from './user-profile.response';
+export * from './inputs/user-create.input';
+export * from './responses/user-profile.response';
