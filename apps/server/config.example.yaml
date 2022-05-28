@@ -1,11 +1,9 @@
 http:
   port: 3000
-  domain: 'localhost'
   secure: false
   credentials:
     key: null
     cert: null
-    ca: null
   cors: 
     - 'http://localhost:8080'
 

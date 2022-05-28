@@ -2,5 +2,7 @@ import { User } from '@/db/user.entity';
 import { createParamDecorator, ExecutionContext } from '@nestjs/common';
 
 export const AuthUser = createParamDecorator((data, context: ExecutionContext): User => {
-    return context.switchToHttp().getRequest().user.userSession.user;
+    const session = context.switchToHttp().getRequest().userSession;
+    if (!session) return undefined;
+    return session.user;
 });

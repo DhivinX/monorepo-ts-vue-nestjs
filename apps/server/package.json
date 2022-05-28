@@ -5,8 +5,8 @@
   "license": "MIT",
   "scripts": {
     "serve": "nest start --watch",
-    "build": "nest build",
-    "cli": "node ../../_dist/server/cli.js",
+    "build": "nest build && ",
+    "cli": "node ../../_dist/server/build/cli.js",
     "lint": "eslint \"src/**/*.ts\" --fix",
     "start": "nest start",
     "start:debug": "nest start --debug --watch"

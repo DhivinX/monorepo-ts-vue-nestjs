@@ -5,5 +5,5 @@ interface Config {
 
 export const config: Config = {
     defaultLocale: 'en',
-    apiUrl: 'http://localhost:3000',
+    apiUrl: 'https://192.168.2.40:3000',
 };

@@ -13,7 +13,7 @@ function cookieExtractor(req: any): null | string {
 }
 
 @Injectable()
-export class JwtStrategy extends PassportStrategy(Strategy, 'local') {
+export class JwtStrategy extends PassportStrategy(Strategy, 'jwt') {
     constructor(configService: ConfigService) {
         super({
             jwtFromRequest: cookieExtractor,
@@ -41,6 +41,6 @@ export class JwtStrategy extends PassportStrategy(Strategy, 'local') {
         userSession.lastSeen = new Date();
         userSession.save();
 
-        return { userSession };
+        return userSession;
     }
 }

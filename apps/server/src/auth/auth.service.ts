@@ -39,7 +39,8 @@ export class AuthService {
 
         response.cookie('jwt', signedToken, {
             secure: this.configService.get<boolean>('http.secure'),
-            domain: this.configService.get<string>('http.domain'),
+            sameSite: 'none',
+            //domain: this.configService.get<string>('http.domain'),
             httpOnly: true,
             maxAge,
         });
@@ -57,7 +58,8 @@ export class AuthService {
 
         response.clearCookie('jwt', {
             secure: this.configService.get<boolean>('http.secure'),
-            domain: this.configService.get<string>('http.domain'),
+            sameSite: 'none',
+            //domain: this.configService.get<string>('http.domain'),
             httpOnly: true,
         });
 

@@ -3,7 +3,7 @@
 
   "compilerOptions": {
     "baseUrl": "./",
-    "outDir": "../../_dist/server",
+    "outDir": "../../_dist/server/build",
 
     "paths": {
       "@/*": ["./src/*"]
