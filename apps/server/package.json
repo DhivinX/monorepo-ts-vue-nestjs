@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "serve": "nest start --watch",
-    "build": "nest build && ",
+    "build": "nest build && copyfiles \"config.yaml\" ../../_dist/server",
     "cli": "node ../../_dist/server/build/cli.js",
     "lint": "eslint \"src/**/*.ts\" --fix",
     "start": "nest start",

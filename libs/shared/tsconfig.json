@@ -3,7 +3,9 @@
 
   "compilerOptions": {
     "baseUrl": "./",
-    "outDir": "./dist"
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "composite": true
   },
 
   "include": [

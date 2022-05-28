@@ -34,8 +34,8 @@
   "include": ["env.d.ts", "src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
 
   "references": [
-    {
-      "path": "./tsconfig.vite-config.json"
-    }
+    { "path": "./tsconfig.vite-config.json" },
+    { "path": "../../libs/shared" },
+    { "path": "../../libs/utils" }
   ]
 }

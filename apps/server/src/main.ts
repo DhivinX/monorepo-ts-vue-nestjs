@@ -9,16 +9,25 @@ import helmet from 'helmet';
 import { AppModule } from './app.module';
 import { YupValidationPipe } from './common';
 import { ExpressAdapter } from '@nestjs/platform-express';
+import { ConsoleLogger } from '@nestjs/common';
 
 async function bootstrap() {
     const server = express();
     const app = await NestFactory.create(AppModule, new ExpressAdapter(server));
+
     const configService = app.get(ConfigService);
+    const logger = new ConsoleLogger('APP');
+
+    const port = configService.get<number>('http.port');
+    const origins = configService.get<string[]>('http.cors');
+    const secure = configService.get<boolean>('http.secure');
+    const keyPath = configService.get<string>('http.credentials.key');
+    const certPath = configService.get<string>('http.credentials.cert');
 
     //app.setGlobalPrefix('/api');
 
     app.enableCors({
-        origin: configService.get<string[]>('http.cors'),
+        origin: origins,
         credentials: true,
     });
 
@@ -28,15 +37,22 @@ async function bootstrap() {
 
     await app.init();
 
-    if (configService.get<boolean>('http.secure')) {
-        const httpsOptions = {
-            key: fs.readFileSync(configService.get<string>('http.credentials.key')),
-            cert: fs.readFileSync(configService.get<string>('http.credentials.cert')),
-        };
+    if (secure) {
+        try {
+            const httpsOptions = {
+                key: fs.readFileSync(keyPath),
+                cert: fs.readFileSync(certPath),
+            };
 
-        https.createServer(httpsOptions, server).listen(configService.get<number>('http.port'));
+            https.createServer(httpsOptions, server).listen(port);
+            logger.log(`The server was started in \x1b[36mHTTPS\x1b[32m mode on port \x1b[36m${port}`);
+        } catch (e) {
+            logger.error(`The HTTPS server cannot be started`);
+            logger.error(e);
+        }
     } else {
         http.createServer(server).listen(configService.get<number>('http.port'));
+        logger.log(`The server was started in \x1b[31mHTTP\x1b[32m mode on port \x1b[36m${port}`);
     }
 }
 

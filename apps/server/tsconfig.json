@@ -8,5 +8,10 @@
     "paths": {
       "@/*": ["./src/*"]
     }
-  }
+  },
+
+  "references": [
+    { "path": "../../libs/shared" },
+    { "path": "../../libs/utils" }
+  ],
 }

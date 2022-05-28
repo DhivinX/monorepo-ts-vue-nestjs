@@ -15,7 +15,7 @@
   "scripts": {
     "lib:dev": "concurrently \"tsc --build tsconfig.json --watch\" \"tsc --build tsconfig.es.json --watch\" --kill-others",
     "lib:build": "concurrently \"tsc --build tsconfig.json\" \"tsc --build tsconfig.es.json\" --kill-others",
-    "lib:clean": "rimraf ./dist ./dist_es",
+    "lib:clean": "rimraf ./dist ./dist_es ./tsconfig.es.tsbuildinfo ./tsconfig.tsbuildinfo",
     "lib:lint": "eslint \"src/**/*.ts\" --fix"
   },
   "dependencies": {
