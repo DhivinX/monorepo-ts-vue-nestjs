@@ -6,11 +6,10 @@
     "syler.sass-indented",
 
     "eamodio.gitlens",
+    "donjayamanne.githistory",
     "aaron-bond.better-comments",
     "visualstudioexptteam.vscodeintellicode",
     "pkief.material-icon-theme",
-    "ecmel.vscode-html-css",
-    "donjayamanne.githistory",
   ],
 
   "unwantedRecommendations": [

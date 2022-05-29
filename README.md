@@ -139,11 +139,10 @@ More info here: https://vuejs.org/guide/typescript/overview.html#takeover-mode
     "syler.sass-indented",
 
     "eamodio.gitlens",
+    "donjayamanne.githistory",
     "aaron-bond.better-comments",
     "visualstudioexptteam.vscodeintellicode",
     "pkief.material-icon-theme",
-    "ecmel.vscode-html-css",
-    "donjayamanne.githistory"
   ]
 }
 
@@ -163,7 +162,6 @@ More info here: https://vuejs.org/guide/typescript/overview.html#takeover-mode
 * `visualstudioexptteam.vscodeintellicode` - IntelliCode
 * `pkief.material-icon-theme` - Material Icon Theme in VS Code
 * `aaron-bond.better-comments` - Better Comments
-* `ecmel.vscode-html-css` - HTML CSS Support
 
 ## Visual Studio Code settings
 
