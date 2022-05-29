@@ -10,14 +10,12 @@
       "@/*": ["./src/*"]
     },
     
-    "types": ["@intlify/vite-plugin-vue-i18n/client"],
+    "types": ["@intlify/vite-plugin-vue-i18n/client"]
   },
 
   "include": ["env.d.ts", "src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
 
   "references": [
-    { "path": "./tsconfig.vite-config.json" },
-    { "path": "../../libs/shared" },
-    { "path": "../../libs/utils" }
+    { "path": "./tsconfig.vite-config.json" }
   ]
 }

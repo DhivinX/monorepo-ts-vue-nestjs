@@ -38,15 +38,4 @@ export default defineConfig({
     build: {
         outDir: '../../_dist/web',
     },
-
-    // build: {
-    //     commonjsOptions: {
-    //         transformMixedEsModules: true,
-    //         include: ['axios', '../../libs/utils/dist/*', '../../libs/shared/dist/*', /node_modules/],
-    //     },
-    // },
-
-    // optimizeDeps: {
-    //     include: ['axios', '@monorepo-ts-vue-nestjs/shared', '@monorepo-ts-vue-nestjs/utils'],
-    // },
 });
