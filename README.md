@@ -34,19 +34,33 @@ Suggest to install [nest-cli](https://docs.nestjs.com/cli/overview) globally in 
 # 1. Clone the repository
 git clone https://github.com/DhivinX/monorepo-ts-vue-nestjs.git project-name
 
-# 2. Install the project and build packages in libs folder
-npm i
-
-# 3. Enter your newly-cloned folder
+# 2. Enter your newly-cloned folder
 cd project-name
 
-# 6. Dev: Run frontend with hot reload 
+# 3. Install the project and build packages in libs folder
+npm install
+
+# 4. Dev: Run frontend with hot reload 
 npm run web:dev
 
-# 7. Dev: Run backend with hot reload 
+# 5. Dev: Run backend with hot reload 
+# Note that you need to create the config.yaml file in the server directory beforehand
+# You can copy the config.example.yaml file and rename it to config.yaml
+# Then you can configure database access and other server settings
 npm run server:dev
 
 ```
+
+## Volar and Visual Studio Code (Takeover Mode)
+
+* Install [Volar](https://marketplace.visualstudio.com/items?itemName=vue.volar) extension
+* In your project workspace, bring up the command palette with Ctrl + Shift + P (macOS: Cmd + Shift + P).
+* Type built and select "Extensions: Show Built-in Extensions".
+* Type typescript in the extension search box (do not remove @builtin prefix).
+* Click the little gear icon of "TypeScript and JavaScript Language Features", and select "Disable (Workspace)".
+* Reload the workspace. Takeover mode will be enabled when you open a Vue or TS file.
+
+More info here: https://vuejs.org/guide/typescript/overview.html#takeover-mode
 
 ## Top-Level Scripts
  
