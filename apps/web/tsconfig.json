@@ -1,34 +1,16 @@
 {
-  "extends": "../../tsconfig.base.json",
+  "extends": "../../tsconfig.web.json",
   
   "compilerOptions": {
-    "module": "esnext",
-    "target": "esnext",
-    "resolveJsonModule": true,
-    "useDefineForClassFields": true,
-    "jsx": "preserve",
-    "noImplicitThis": true,
-    "isolatedModules": true,
-    "preserveValueImports": true,
-    "importsNotUsedAsValues": "error",
-    "forceConsistentCasingInFileNames": true,
-    "skipLibCheck": true,
-    "sourceMap": false,
     "incremental": false,
     "declaration": false,
-    
-    "lib": [
-      "esnext",
-      "dom",
-      "dom.iterable"
-    ],
-
-    "types": ["@intlify/vite-plugin-vue-i18n/client"],
 
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
-    }
+    },
+    
+    "types": ["@intlify/vite-plugin-vue-i18n/client"],
   },
 
   "include": ["env.d.ts", "src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],

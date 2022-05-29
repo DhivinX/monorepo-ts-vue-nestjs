@@ -1,0 +1,24 @@
+{
+  "extends": "./tsconfig.base.json",
+  
+  "compilerOptions": {
+    "module": "esnext",
+    "target": "esnext",
+    "resolveJsonModule": true,
+    "useDefineForClassFields": true,
+    "jsx": "preserve",
+    "noImplicitThis": true,
+    "isolatedModules": true,
+    "preserveValueImports": true,
+    "importsNotUsedAsValues": "error",
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "sourceMap": false,
+    
+    "lib": [
+      "esnext",
+      "dom",
+      "dom.iterable"
+    ],
+  },
+}
