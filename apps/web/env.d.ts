@@ -1,8 +1,15 @@
 /// <reference types="vite/client" />
 
-declare module '@intlify/vite-plugin-vue-i18n/messages' {
-    import { LocaleMessages } from '@intlify/core-base';
-    import { VueMessageType } from 'vue-i18n';
-    const messages: LocaleMessages<VueMessageType>;
-    export default messages;
+declare module '@vue/runtime-dom' {
+    interface HTMLAttributes {
+        [key: string]: any;
+    }
 }
+
+declare module '@vue/runtime-core' {
+    interface AllowedComponentProps {
+        [key: string]: any;
+    }
+}
+
+export {};
