@@ -1,9 +1,18 @@
 interface Config {
     defaultLocale: string;
-    apiUrl: string;
+    api: {
+        host: string;
+        port: number;
+    };
 }
+
+const host = window.location.hostname;
 
 export const config: Config = {
     defaultLocale: 'en',
-    apiUrl: 'http://localhost:3000',
+
+    api: {
+        host: `http://${host}`,
+        port: 3000,
+    },
 };
